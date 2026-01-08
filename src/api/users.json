@@ -1,0 +1,4 @@
+[
+    { "id": "admin_1", "name": "Super Admin", "role": "Admin", "email": "admin@gtech.com" },
+    { "id": "editor_1", "name": "Fatima Zahra", "role": "Editor", "email": "fatima@gtech.com" }
+]

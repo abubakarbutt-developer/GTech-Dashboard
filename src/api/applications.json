@@ -1,0 +1,42 @@
+[
+    {
+        "id": "APP001",
+        "employeeId": "GT001",
+        "employeeName": "Saad Mohy Ud Din",
+        "type": "leave",
+        "reason": "Family wedding event",
+        "duration": "3 Days",
+        "appliedDate": "2026-01-05",
+        "status": "pending"
+    },
+    {
+        "id": "APP002",
+        "employeeId": "GT004",
+        "employeeName": "Tania Mehboob",
+        "type": "short-leave",
+        "reason": "Doctor appointment",
+        "duration": "2 Hours",
+        "appliedDate": "2026-01-07",
+        "status": "in-progress"
+    },
+    {
+        "id": "APP003",
+        "employeeId": "GT001",
+        "employeeName": "Saad Mohy Ud Din",
+        "type": "short-leave",
+        "reason": "Bank visit",
+        "duration": "1 Hour",
+        "appliedDate": "2025-12-28",
+        "status": "approved"
+    },
+    {
+        "id": "APP004",
+        "employeeId": "GT003",
+        "employeeName": "Shoaib Hassan",
+        "type": "leave",
+        "reason": "Sick leave",
+        "duration": "2 Days",
+        "appliedDate": "2026-01-04",
+        "status": "rejected"
+    }
+]

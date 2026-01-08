@@ -1,0 +1,17 @@
+[
+    { "item": "Laptops (MacBook/Dell)", "qty": 45, "status": "Active" },
+    { "item": "Laptop Chargers", "qty": 50, "status": "Available" },
+    { "item": "Mobile Devices (Testing)", "qty": 15, "status": "In-Use" },
+    { "item": "Internet Connectors (Dongles)", "qty": 10, "status": "Available" },
+    { "item": "Ergonomic Chairs", "qty": 65, "status": "Active" },
+    { "item": "Office Tables", "qty": 30, "status": "Active" },
+    { "item": "Wireless Headphones", "qty": 25, "status": "In-Use" },
+    { "item": "USB Hubs/Drives", "qty": 40, "status": "Stock" },
+    { "item": "Tissue Boxes", "qty": 100, "status": "Monthly Stock" },
+    { "item": "Laptop Bags", "qty": 45, "status": "Active" },
+    { "item": "Air Freshners", "qty": 12, "status": "Stock" },
+    { "item": "Mouse Pads", "qty": 60, "status": "Stock" },
+    { "item": "Optical Mouse", "qty": 70, "status": "Active" },
+    { "item": "Mechanical Keyboards", "qty": 40, "status": "In-Use" },
+    { "item": "LCD Monitors (24/27\")", "qty": 55, "status": "Active" }
+]

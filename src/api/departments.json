@@ -1,0 +1,84 @@
+[
+    {
+        "id": 1,
+        "name": "Software Engineering",
+        "description": "Building robust and scalable software solutions.",
+        "head": "Mohammad Arsalan",
+        "employeeCount": 24,
+        "icon": "Code",
+        "color": "linear-gradient(135deg, #6366f1 0%, #a855f7 100%)"
+    },
+    {
+        "id": 2,
+        "name": "UI/UX Design",
+        "description": "Crafting beautiful and intuitive user experiences.",
+        "head": "Fatima Zahra",
+        "employeeCount": 12,
+        "icon": "Palette",
+        "color": "linear-gradient(135deg, #ec4899 0%, #f43f5e 100%)"
+    },
+    {
+        "id": 3,
+        "name": "Quality Assurance",
+        "description": "Ensuring the highest standards of software quality.",
+        "head": "Nimra",
+        "employeeCount": 8,
+        "icon": "ShieldCheck",
+        "color": "linear-gradient(135deg, #10b981 0%, #059669 100%)"
+    },
+    {
+        "id": 4,
+        "name": "DevOps & Cloud",
+        "description": "Streamlining deployment and infrastructure management.",
+        "head": "Usman Ghani",
+        "employeeCount": 5,
+        "icon": "Server",
+        "color": "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)"
+    },
+    {
+        "id": 5,
+        "name": "Product Management",
+        "description": "Defining product strategy and roadmap.",
+        "head": "Ayesha Malik",
+        "employeeCount": 6,
+        "icon": "Layers",
+        "color": "linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)"
+    },
+    {
+        "id": 6,
+        "name": "Human Resources",
+        "description": "Managing talent and organizational culture.",
+        "head": "Sana Khan",
+        "employeeCount": 4,
+        "icon": "Users",
+        "color": "linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%)"
+    },
+    {
+        "id": 7,
+        "name": "Mobile Development",
+        "description": "Creating high-performance iOS and Android applications.",
+        "head": "Waqas Ali",
+        "employeeCount": 9,
+        "icon": "Smartphone",
+        "color": "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
+    },
+    {
+        "id": 8,
+        "name": "Sales & Marketing",
+        "description": "Driving growth and brand awareness.",
+        "head": "Bilal Ahmed",
+        "employeeCount": 7,
+        "icon": "Megaphone",
+        "color": "linear-gradient(135deg, #f97316 0%, #ea580c 100%)"
+    },
+    {
+        "id": 9,
+        "name": "Facilities & Inventory",
+        "description": "Managing office assets, equipment, and workspace facilities.",
+        "head": "Zubair Ahmed",
+        "employeeCount": 3,
+        "icon": "Building2",
+        "color": "linear-gradient(135deg, #64748b 0%, #334155 100%)",
+        "isFacilities": true
+    }
+]

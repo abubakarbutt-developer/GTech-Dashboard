@@ -1,0 +1,61 @@
+{
+    "expenseData": [
+        { "name": "Jan", "value": 2100 },
+        { "name": "Feb", "value": 2400 },
+        { "name": "Mar", "value": 2150 },
+        { "name": "Apr", "value": 2800 },
+        { "name": "May", "value": 3200 },
+        { "name": "Jun", "value": 3100 },
+        { "name": "Jul", "value": 3800 }
+    ],
+    "monthlyBudgetData": [
+        { "name": "Electricity", "value": 85 },
+        { "name": "Water", "value": 45 },
+        { "name": "Office Exp", "value": 72 },
+        { "name": "Internet", "value": 95 },
+        { "name": "Salary", "value": 60 },
+        { "name": "Maintenance", "value": 30 }
+    ],
+    "activities": [
+        {
+            "id": 1,
+            "title": "Electricity Bill Paid",
+            "description": "Payment of Rs. 24,500 processed for Dec 2025",
+            "time": "2 minutes ago",
+            "icon": "Zap",
+            "color": "linear-gradient(135deg, #f6d365 0%, #fda085 100%)"
+        },
+        {
+            "id": 2,
+            "title": "Internet Subscription",
+            "description": "Monthly fiber-optic bill renewed",
+            "time": "15 minutes ago",
+            "icon": "Wifi",
+            "color": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+        },
+        {
+            "id": 3,
+            "title": "Water Bill Received",
+            "description": "New invoice for Meter #29384",
+            "time": "1 hour ago",
+            "icon": "Droplets",
+            "color": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+        },
+        {
+            "id": 4,
+            "title": "Office Supplies",
+            "description": "New stationery and pantry items purchased",
+            "time": "2 hours ago",
+            "icon": "Briefcase",
+            "color": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+        },
+        {
+            "id": 5,
+            "title": "System Update",
+            "description": "Dashboard updated to v2.5.0 (Expense Suite)",
+            "time": "3 hours ago",
+            "icon": "Clock",
+            "color": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+        }
+    ]
+}

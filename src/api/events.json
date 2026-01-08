@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "name": "New Year 2026 Celebration",
+        "date": "2026-01-01",
+        "description": "Office grand celebration with team dinner and awards ceremony.",
+        "media": []
+    },
+    {
+        "id": "2",
+        "name": "Independence Day",
+        "date": "2025-08-14",
+        "description": "Flag hoisting ceremony and patriotic activities.",
+        "media": []
+    }
+]

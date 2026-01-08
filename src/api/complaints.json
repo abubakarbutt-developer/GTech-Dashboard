@@ -1,0 +1,34 @@
+[
+    {
+        "id": "1",
+        "complainant": "Saad Mohy Ud Din",
+        "employeeId": "GT001",
+        "subject": "AC Noise in Office",
+        "description": "The AC unit in the north wing is making a very loud noise throughout the shift.",
+        "date": "2026-01-05",
+        "status": "active",
+        "replies": []
+    },
+    {
+        "id": "2",
+        "complainant": "Tania Mehboob",
+        "employeeId": "GT004",
+        "subject": "Keyboard Replacement",
+        "description": "My spacebar is not working properly. Need a new high-quality mechanical keyboard.",
+        "date": "2026-01-06",
+        "status": "in-progress",
+        "replies": [
+            { "id": "r1", "sender": "admin", "text": "We have ordered the keyboard. Expect delivery by tomorrow.", "timestamp": "2026-01-06 14:00" }
+        ]
+    },
+    {
+        "id": "3",
+        "complainant": "Shoaib Hassan",
+        "employeeId": "GT003",
+        "subject": "Internet Connectivity",
+        "description": "Internet Speed is too slow during peak hours (2 PM - 4 PM).",
+        "date": "2026-01-04",
+        "status": "completed",
+        "replies": []
+    }
+]

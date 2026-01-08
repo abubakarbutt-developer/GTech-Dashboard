@@ -1,0 +1,101 @@
+[
+    {
+        "id": 1,
+        "name": "Saad Mohy Ud Din",
+        "cnic": "42101-1111111-1",
+        "contact": "+92 300 0000001",
+        "designation": "Senior Developer",
+        "startedDate": "2023-01-15",
+        "status": "active",
+        "department": "Engineering",
+        "salary": "150,000"
+    },
+    {
+        "id": 2,
+        "name": "Shahzad Ahmed",
+        "cnic": "42101-2222222-2",
+        "contact": "+92 300 0000002",
+        "designation": "UI/UX Designer",
+        "startedDate": "2023-03-10",
+        "status": "active",
+        "department": "Design",
+        "salary": "120,000"
+    },
+    {
+        "id": 3,
+        "name": "Shoaib Hassan",
+        "cnic": "42101-3333333-3",
+        "contact": "+92 300 0000003",
+        "designation": "Product Manager",
+        "startedDate": "2022-11-20",
+        "status": "active",
+        "department": "Management",
+        "salary": "180,000"
+    },
+    {
+        "id": 4,
+        "name": "Tania Mehboob",
+        "cnic": "42101-4444444-4",
+        "contact": "+92 300 0000004",
+        "designation": "Quality Assurance",
+        "startedDate": "2023-05-12",
+        "status": "active",
+        "department": "Engineering",
+        "salary": "100,000"
+    },
+    {
+        "id": 5,
+        "name": "Tayyab Tahir",
+        "cnic": "42101-5555555-5",
+        "contact": "+92 300 0000005",
+        "designation": "DevOps Engineer",
+        "startedDate": "2023-08-20",
+        "status": "active",
+        "department": "Engineering",
+        "salary": "140,000"
+    },
+    {
+        "id": 6,
+        "name": "Umer Qayyom",
+        "cnic": "42101-6666666-6",
+        "contact": "+92 300 0000006",
+        "designation": "Frontend Developer",
+        "startedDate": "2023-09-01",
+        "status": "active",
+        "department": "Engineering",
+        "salary": "110,000"
+    },
+    {
+        "id": 7,
+        "name": "Usman Haider",
+        "cnic": "42101-7777777-7",
+        "contact": "+92 300 0000007",
+        "designation": "Backend Developer",
+        "startedDate": "2023-02-15",
+        "status": "active",
+        "department": "Engineering",
+        "salary": "130,000"
+    },
+    {
+        "id": 8,
+        "name": "Zahid Ali",
+        "cnic": "42101-8888888-8",
+        "contact": "+92 300 0000008",
+        "designation": "Mobile Developer",
+        "startedDate": "2023-04-10",
+        "status": "active",
+        "department": "Engineering",
+        "salary": "125,000"
+    },
+    {
+        "id": 9,
+        "name": "Zaryab Khan",
+        "cnic": "42101-9999999-9",
+        "contact": "+92 300 0000009",
+        "designation": "HR Specialist",
+        "startedDate": "2023-06-05",
+        "status": "active",
+        "department": "Management",
+        "salary": "90,000"
+    }
+]
