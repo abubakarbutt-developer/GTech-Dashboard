@@ -99,6 +99,11 @@
     font-weight: 500;
 }
 
+.email-text {
+    color: var(--accent-primary) !important;
+    font-weight: 600 !important;
+}
+
 .salary-value {
     color: var(--accent-success) !important;
     font-weight: 700 !important;

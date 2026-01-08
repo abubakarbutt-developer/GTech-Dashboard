@@ -69,6 +69,15 @@ const AdminPage = () => {
 
     return (
         <div className="admin-page fade-in">
+            <div className="page-header">
+                <div className="header-icon-box">
+                    <Shield size={28} />
+                </div>
+                <div className="header-text">
+                    <h1>Administrator <span className="gradient-text">Panel</span></h1>
+                    <p>Manage system users, permissions and administrative configurations</p>
+                </div>
+            </div>
             <div className="admin-grid">
                 {/* Admin Details Section */}
                 <div className="admin-section glass-card">

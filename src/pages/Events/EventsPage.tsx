@@ -6,7 +6,8 @@ import {
     Edit2,
     Image as ImageIcon,
     X,
-    Upload
+    Upload,
+    PartyPopper
 } from 'lucide-react';
 import initialEventsData from '../../api/events.json';
 import './EventsPage.css';
@@ -118,13 +119,14 @@ const EventsPage: React.FC = () => {
     };
 
     return (
-        <div className="events-page">
-            <div className="events-header">
-                <div>
-                    <h2 className="section-title">
-                        Event <span className="gradient-text">History</span>
-                    </h2>
-                    <p style={{ opacity: 0.6 }}>Memories & History Track</p>
+        <div className="events-page fade-in">
+            <div className="page-header">
+                <div className="header-icon-box">
+                    <PartyPopper size={28} />
+                </div>
+                <div className="header-text">
+                    <h1>Event <span className="gradient-text">History</span></h1>
+                    <p>Memories & History Track</p>
                 </div>
                 <button className="btn-primary" onClick={() => handleOpenModal()}>
                     <Plus size={18} /> Add Event

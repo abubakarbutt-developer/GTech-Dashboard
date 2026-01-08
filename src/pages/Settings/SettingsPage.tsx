@@ -5,7 +5,8 @@ import {
     Moon,
     Sun,
     Monitor,
-    Check
+    Check,
+    Settings
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import './SettingsPage.css';
@@ -43,9 +44,14 @@ const SettingsPage = ({ currentTheme, onThemeToggle }: SettingsPageProps) => {
 
     return (
         <div className="settings-page fade-in">
-            <div className="settings-header">
-                <h2 className="page-title">System <span className="gradient-text">Settings</span></h2>
-                <p className="page-subtitle">Personalize your dashboard experience and preferences</p>
+            <div className="page-header">
+                <div className="header-icon-box">
+                    <Settings size={28} />
+                </div>
+                <div className="header-text">
+                    <h1>System <span className="gradient-text">Settings</span></h1>
+                    <p>Personalize your dashboard experience and preferences</p>
+                </div>
             </div>
 
             <div className="settings-grid">

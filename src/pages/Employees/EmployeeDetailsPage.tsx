@@ -18,44 +18,23 @@ import {
     Eye,
     AlertCircle,
     X,
-    Maximize2
+    Maximize2,
+    Mail
 } from 'lucide-react';
+
 import { useState } from 'react';
-import useLocalStorage from '../../hooks/useLocalStorage';
-import initialEmployeesData from '../../api/employees.json';
+import type { EmployeeDocuments } from '../../types/employee';
+import { useEmployees } from '../../hooks/useEmployees';
 import Button from '../../components/UI/Button';
 import './EmployeeDetailsPage.css';
-
-interface EmployeeData {
-    id: number;
-    name: string;
-    cnic: string;
-    contact: string;
-    designation: string;
-    startedDate: string;
-    status: 'active' | 'inactive';
-    department: string;
-    salary: string;
-}
-
-interface EmployeeDocuments {
-    passportPic: string | null;
-    cnicPdf: string | null;
-    prevSalarySlip: string | null;
-    intermediateDegree: string | null;
-    bachelorsDegree: string | null;
-}
-
-const initialEmployees = initialEmployeesData as EmployeeData[];
 
 const EmployeeDetailsPage = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
-    const [employees] = useLocalStorage<EmployeeData[]>('employees-data', initialEmployees);
-    const [allDocuments] = useLocalStorage<Record<number, EmployeeDocuments>>('employee-documents', {});
+    const { getEmployee, getEmployeeDocuments } = useEmployees();
 
-    const employee = employees.find(emp => emp.id === Number(id));
-    const savedDocuments = id ? allDocuments[Number(id)] : null;
+    const employee = getEmployee(Number(id));
+    const savedDocuments = id ? getEmployeeDocuments(Number(id)) : null;
 
     const [activePreview, setActivePreview] = useState<{ name: string; type: string; url: string | null } | null>(null);
 
@@ -182,7 +161,7 @@ const EmployeeDetailsPage = () => {
                     <ArrowLeft size={20} />
                 </Button>
                 <div className="header-info">
-                    <h1>Employee Profile</h1>
+                    <h1>Employee <span className="gradient-text">Profile</span></h1>
                     <p>Detailed view and management for {employee.name}</p>
                 </div>
             </div>
@@ -216,6 +195,11 @@ const EmployeeDetailsPage = () => {
                                 <span>{employee.designation}</span>
                             </div>
                             <div className="info-item">
+                                <label><Mail size={14} /> Company Gmail</label>
+                                <span className="email-text">{employee.companyEmail || 'N/A'}</span>
+                            </div>
+                            <div className="info-item">
+
                                 <label><Building2 size={14} /> Department</label>
                                 <span>{employee.department}</span>
                             </div>

@@ -5,7 +5,8 @@ import {
     Plus,
     Clock,
     Bell,
-    Coffee
+    Coffee,
+    Calendar
 } from 'lucide-react';
 import './CalendarPage.css';
 
@@ -146,6 +147,15 @@ const CalendarPage: React.FC = () => {
 
     return (
         <div className="calendar-page fade-in">
+            <div className="page-header">
+                <div className="header-icon-box">
+                    <Calendar size={28} />
+                </div>
+                <div className="header-text">
+                    <h1>Company <span className="gradient-text">Calendar</span></h1>
+                    <p>Track shifts, holidays and important meetings</p>
+                </div>
+            </div>
             <div className="calendar-container">
                 <div className="calendar-main glass-card">
                     <div className="calendar-header">

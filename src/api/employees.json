@@ -8,7 +8,8 @@
         "startedDate": "2023-01-15",
         "status": "active",
         "department": "Engineering",
-        "salary": "150,000"
+        "salary": "150,000",
+        "companyEmail": "saad@gtech.com"
     },
     {
         "id": 2,
@@ -19,7 +20,8 @@
         "startedDate": "2023-03-10",
         "status": "active",
         "department": "Design",
-        "salary": "120,000"
+        "salary": "120,000",
+        "companyEmail": "shahzad@gtech.com"
     },
     {
         "id": 3,
@@ -30,7 +32,8 @@
         "startedDate": "2022-11-20",
         "status": "active",
         "department": "Management",
-        "salary": "180,000"
+        "salary": "180,000",
+        "companyEmail": "shoaib@gtech.com"
     },
     {
         "id": 4,
@@ -41,7 +44,8 @@
         "startedDate": "2023-05-12",
         "status": "active",
         "department": "Engineering",
-        "salary": "100,000"
+        "salary": "100,000",
+        "companyEmail": "tania@gtech.com"
     },
     {
         "id": 5,
@@ -52,7 +56,8 @@
         "startedDate": "2023-08-20",
         "status": "active",
         "department": "Engineering",
-        "salary": "140,000"
+        "salary": "140,000",
+        "companyEmail": "tayyab@gtech.com"
     },
     {
         "id": 6,
@@ -63,7 +68,8 @@
         "startedDate": "2023-09-01",
         "status": "active",
         "department": "Engineering",
-        "salary": "110,000"
+        "salary": "110,000",
+        "companyEmail": "umer@gtech.com"
     },
     {
         "id": 7,
@@ -74,7 +80,8 @@
         "startedDate": "2023-02-15",
         "status": "active",
         "department": "Engineering",
-        "salary": "130,000"
+        "salary": "130,000",
+        "companyEmail": "usman@gtech.com"
     },
     {
         "id": 8,
@@ -85,7 +92,8 @@
         "startedDate": "2023-04-10",
         "status": "active",
         "department": "Engineering",
-        "salary": "125,000"
+        "salary": "125,000",
+        "companyEmail": "zahid@gtech.com"
     },
     {
         "id": 9,
@@ -96,6 +104,7 @@
         "startedDate": "2023-06-05",
         "status": "active",
         "department": "Management",
-        "salary": "90,000"
+        "salary": "90,000",
+        "companyEmail": "zaryab@gtech.com"
     }
 ]

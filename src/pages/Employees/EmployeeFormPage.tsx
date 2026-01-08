@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import {
     ArrowLeft,
@@ -20,50 +20,23 @@ import {
     Eye,
     AlertCircle,
     Maximize2,
-    Download
+    Download,
+    Mail
 } from 'lucide-react';
-import { useRef } from 'react';
-import useLocalStorage from '../../hooks/useLocalStorage';
-import initialEmployeesData from '../../api/employees.json';
+
+import type { EmployeeData, EmployeeDocuments } from '../../types/employee';
+import { useEmployees } from '../../hooks/useEmployees';
 import Button from '../../components/UI/Button';
 import './EmployeeFormPage.css';
-
-interface EmployeeData {
-    id: number;
-    name: string;
-    cnic: string;
-    contact: string;
-    designation: string;
-    startedDate: string;
-    status: 'active' | 'inactive';
-    department: string;
-    salary: string;
-}
-
-interface EmployeeDocuments {
-    passportPic: string | null;
-    cnicPdf: string | null;
-    prevSalarySlip: string | null;
-    intermediateDegree: string | null;
-    bachelorsDegree: string | null;
-}
-
-const initialEmployees = initialEmployeesData as EmployeeData[];
 
 const EmployeeFormPage = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
-    const [employees, setEmployees] = useLocalStorage<EmployeeData[]>('employees-data', initialEmployees);
-    const [allDocuments, setAllDocuments] = useLocalStorage<Record<number, EmployeeDocuments>>('employee-documents', {});
+    const { getEmployee, addEmployee, updateEmployee, getEmployeeDocuments } = useEmployees();
+
 
     const isEditing = !!id;
-    const initialDocs = isEditing ? allDocuments[Number(id)] || {
-        passportPic: null,
-        cnicPdf: null,
-        prevSalarySlip: null,
-        intermediateDegree: null,
-        bachelorsDegree: null
-    } : {
+    const initialDocs = isEditing ? getEmployeeDocuments(Number(id)) : {
         passportPic: null,
         cnicPdf: null,
         prevSalarySlip: null,
@@ -79,7 +52,8 @@ const EmployeeFormPage = () => {
         startedDate: '',
         status: 'active',
         department: '',
-        salary: ''
+        salary: '',
+        companyEmail: ''
     });
 
     const [localDocuments, setLocalDocuments] = useState<EmployeeDocuments>(initialDocs);
@@ -97,7 +71,7 @@ const EmployeeFormPage = () => {
 
     useEffect(() => {
         if (isEditing) {
-            const employee = employees.find(emp => emp.id === Number(id));
+            const employee = getEmployee(Number(id));
             if (employee) {
                 setFormData({
                     name: employee.name,
@@ -107,11 +81,12 @@ const EmployeeFormPage = () => {
                     startedDate: employee.startedDate,
                     status: employee.status,
                     department: employee.department,
-                    salary: employee.salary
+                    salary: employee.salary,
+                    companyEmail: employee.companyEmail || ''
                 });
             }
         }
-    }, [id, isEditing, employees]);
+    }, [id, isEditing, getEmployee]);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -231,19 +206,9 @@ const EmployeeFormPage = () => {
         e.preventDefault();
 
         if (isEditing) {
-            const empId = Number(id);
-            setEmployees(prev => prev.map(emp =>
-                emp.id === empId ? { ...emp, ...formData } : emp
-            ));
-            setAllDocuments(prev => ({ ...prev, [empId]: localDocuments }));
+            updateEmployee(Number(id), formData, localDocuments);
         } else {
-            const newId = Math.max(0, ...employees.map(e => e.id)) + 1;
-            const newEmployee: EmployeeData = {
-                id: newId,
-                ...formData
-            };
-            setEmployees(prev => [newEmployee, ...prev]);
-            setAllDocuments(prev => ({ ...prev, [newId]: localDocuments }));
+            addEmployee(formData, localDocuments);
         }
 
         navigate('/employees');
@@ -302,7 +267,19 @@ const EmployeeFormPage = () => {
                                 required
                             />
                         </div>
+                        <div className="form-group">
+                            <label><Mail size={16} /> Company Gmail</label>
+                            <input
+                                type="email"
+                                name="companyEmail"
+                                value={formData.companyEmail}
+                                onChange={handleInputChange}
+                                placeholder="name@company.com"
+                                required
+                            />
+                        </div>
                     </div>
+
 
                     <div className="form-section-title mt-2">
                         <Briefcase size={20} />
