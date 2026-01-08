@@ -90,13 +90,14 @@ const ApplicationCenter: React.FC = () => {
     };
 
     return (
-        <div className="applications-page">
-            <div className="applications-header">
-                <div>
-                    <h2 className="section-title">
-                        Application <span className="gradient-text">Center</span>
-                    </h2>
-                    <p style={{ opacity: 0.6 }}>Manage employee leaves and short leaves</p>
+        <div className="applications-page fade-in">
+            <div className="page-header">
+                <div className="header-icon-box">
+                    <FileText size={28} />
+                </div>
+                <div className="header-text">
+                    <h1>Application <span className="gradient-text">Center</span></h1>
+                    <p>Manage employee leaves and short leaves</p>
                 </div>
             </div>
 

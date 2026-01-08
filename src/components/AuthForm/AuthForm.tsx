@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Eye, EyeOff, LogIn, Sun, Moon } from 'lucide-react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/main_logo.png';
 import Button from '../UI/Button';
 import './AuthForm.css';
 
@@ -48,9 +48,18 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
                 {/* Left Side: Branding/Visuals */}
                 <div className="auth-branding-side">
                     <div className="branding-content">
-                        <div className="branding-logo">
-                            <img src={logo} alt="Gtech Sources" className="logo-img-auth" />
-                            <span>Gtech Sources</span>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+                            <div className="branding-box glass-card fade-in">
+                                <div className="logo-box">
+                                    <img src={logo} alt="Gtech Sources" className="branding-logo-img" />
+                                </div>
+                                <div className="branding-content">
+                                    <h1 className="branding-title">
+                                        Gtech <span className="gradient-text">Sources</span>
+                                    </h1>
+                                    <p className="branding-subtitle">Innovating new Possibilties</p>
+                                </div>
+                            </div>
                             <Button variant="ghost" className="theme-toggle-auth glass-card" onClick={toggleTheme} title="Toggle Theme" size="sm">
                                 {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
                             </Button>

@@ -5,7 +5,6 @@ import {
     Trash2,
     MessageSquare,
     Send,
-    Download,
     X,
     FileText,
     History as HistoryIcon,
@@ -127,25 +126,6 @@ const ComplaintsPage: React.FC = () => {
         setIsAddModalOpen(false);
     };
 
-    const generateCompletedReport = () => {
-        const completedComplaints = complaints.filter(c => c.status === 'completed');
-        if (completedComplaints.length === 0) {
-            alert('No completed complaints found to generate a report.');
-            return;
-        }
-
-        const reportContent = completedComplaints.map(c =>
-            `ID: ${c.id}\nComplainant: ${c.complainant} (${c.employeeId})\nSubject: ${c.subject}\nDate: ${c.date}\nStatus: Completed\nDescription: ${c.description}\n-------------------\n`
-        ).join('\n');
-
-        const blob = new Blob([reportContent], { type: 'text/plain' });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = `Completed_Complaints_Report_${new Date().toISOString().split('T')[0]}.txt`;
-        link.click();
-        URL.revokeObjectURL(url);
-    };
 
     const filteredComplaints = complaints.filter(c =>
         c.complainant.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -163,20 +143,18 @@ const ComplaintsPage: React.FC = () => {
     };
 
     return (
-        <div className="complaints-page">
-            <div className="complaints-header">
-                <div>
-                    <h2 className="section-title">
-                        Manage <span className="gradient-text">Complaints</span>
-                    </h2>
-                    <p style={{ opacity: 0.6 }}>Employee grievances and resolution center</p>
+        <div className="complaints-page fade-in">
+            <div className="page-header">
+                <div className="header-icon-box">
+                    <MessageSquare size={28} />
                 </div>
-                <div style={{ display: 'flex', gap: '1rem' }}>
+                <div className="header-text">
+                    <h1>Grievance <span className="gradient-text">Center</span></h1>
+                    <p>Employee grievances and resolution center</p>
+                </div>
+                <div className="header-actions">
                     <Button variant="primary" onClick={() => setIsAddModalOpen(true)} icon={<Plus size={18} />}>
                         Add Complaint
-                    </Button>
-                    <Button variant="primary" onClick={generateCompletedReport} icon={<Download size={18} />}>
-                        Generate Report
                     </Button>
                 </div>
             </div>

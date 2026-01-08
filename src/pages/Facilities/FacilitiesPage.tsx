@@ -120,14 +120,17 @@ const FacilitiesPage = ({ onBack }: FacilitiesPageProps) => {
 
     return (
         <div className="facilities-page fade-in">
-            <div className="facilities-header">
+            <div className="page-header">
                 <button className="back-btn glass-card" onClick={onBack}>
                     <ArrowLeft size={20} />
                     <span>Back to Dashboard</span>
                 </button>
-                <div className="header-info">
-                    <h2 className="page-title">Facilities & <span className="gradient-text">Inventory Details</span></h2>
-                    <p className="page-subtitle">Managing office assets, equipment, and workspace facilities</p>
+                <div className="header-icon-box">
+                    <Package size={28} />
+                </div>
+                <div className="header-text">
+                    <h1>Facilities & <span className="gradient-text">Inventory</span></h1>
+                    <p>Managing office assets, equipment, and workspace facilities</p>
                 </div>
                 <div className="header-actions">
                     <button className="btn-primary" onClick={() => setIsAddAssetOpen(true)}>

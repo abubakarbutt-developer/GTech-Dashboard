@@ -49,6 +49,16 @@ const AttendancePage = () => {
 
     return (
         <div className="attendance-page fade-in">
+            <div className="page-header">
+                <div className="header-icon-box">
+                    <CalendarIcon size={28} />
+                </div>
+                <div className="header-text">
+                    <h1>Attendance <span className="gradient-text">Logs</span></h1>
+                    <p>Track employee presence and working hours in real-time</p>
+                </div>
+            </div>
+
             {/* Stats Overview */}
             <div className="attendance-stats-grid">
                 <div className="attendance-stat-card glass-card">

@@ -14,7 +14,7 @@ import {
     FileText
 } from 'lucide-react';
 import { useState } from 'react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/main_logo.png';
 import './Sidebar.css';
 
 interface SidebarProps {
@@ -62,8 +62,16 @@ const Sidebar: React.FC<SidebarProps> = ({ onNavigate, activePage = 'analytics' 
     return (
         <aside className={`sidebar glass-card ${isCollapsed ? 'collapsed' : ''}`}>
             <div className="sidebar-header">
-                <div className="sidebar-logo">
-                    <img src={logo} alt="Gtech Sources" className="logo-img" />
+                <div className="sidebar-logo-container">
+                    <div className="logo-box-small">
+                        <img src={logo} alt="Gtech Sources" className="logo-img" />
+                    </div>
+                    {!isCollapsed && (
+                        <div className="sidebar-title-text fade-in">
+                            <span className="brand-name">Gtech</span>
+                            <span className="brand-suffix gradient-text">Sources</span>
+                        </div>
+                    )}
                 </div>
                 <button
                     className="collapse-btn"

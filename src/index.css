@@ -85,7 +85,7 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Animated Background */
+/* Static Gradient Mesh for better performance */
 body::before {
   content: '';
   position: fixed;
@@ -96,7 +96,6 @@ body::before {
   background: var(--bg-gradient-mesh);
   pointer-events: none;
   z-index: 0;
-  animation: backgroundPulse 15s ease-in-out infinite;
   transition: background 0.4s ease;
 }
 
@@ -132,17 +131,16 @@ body::before {
 /* Utility Classes */
 .glass-card {
   background: var(--bg-card);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
-  transition: all var(--transition-normal);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .glass-card:hover {
   background: var(--bg-card-hover);
   box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
 }
 
 .gradient-text {
@@ -152,35 +150,131 @@ body::before {
   background-clip: text;
 }
 
-.fade-in {
-  animation: fadeIn 0.5s ease-in-out;
+.fade-in, .slide-in, .slide-up, .fade-in-delay {
+  opacity: 1;
+  transform: none;
+  animation: none;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Global Page Header (Style Box with Logo & Title) */
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  width: fit-content;
 }
 
-.slide-in {
-  animation: slideIn 0.6s ease-out;
+.page-header:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(99, 102, 241, 0.2);
 }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.page-header .header-text h1 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 0.15rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1;
 }
+
+.page-header .header-text p {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.header-icon-box {
+  width: 54px;
+  height: 54px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-primary);
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* Global Branding Box Style */
+.branding-box {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  width: fit-content;
+}
+
+.branding-box:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 12px 40px 0 rgba(99, 102, 241, 0.15);
+}
+
+.logo-box {
+  width: 54px;
+  height: 54px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.branding-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.3));
+}
+
+.branding-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.branding-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.branding-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
 
 /* Responsive Typography */
 h1 {

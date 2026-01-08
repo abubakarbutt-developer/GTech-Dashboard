@@ -10,34 +10,22 @@ import {
     Trash2,
     AlertTriangle,
     Edit,
-    Eye
+    Eye,
+    Mail
 } from 'lucide-react';
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useLocalStorage from '../../hooks/useLocalStorage';
-import initialEmployeesData from '../../api/employees.json';
+import type { EmployeeData } from '../../types/employee';
+import { useEmployees } from '../../hooks/useEmployees';
+
 import Button from '../../components/UI/Button';
 import './EmployeesPage.css';
-
-interface EmployeeData {
-    id: number;
-    name: string;
-    cnic: string;
-    contact: string;
-    designation: string;
-    startedDate: string;
-    status: 'active' | 'inactive';
-    department: string;
-    salary: string;
-}
-
-const initialEmployees = initialEmployeesData as EmployeeData[];
-
 
 const EmployeesPage = () => {
     const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
-    const [employees, setEmployees] = useLocalStorage<EmployeeData[]>('employees-data', initialEmployees);
+    const { employees, deleteEmployee } = useEmployees();
 
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [employeeToDelete, setEmployeeToDelete] = useState<number | null>(null);
@@ -58,11 +46,12 @@ const EmployeesPage = () => {
 
     const confirmDelete = () => {
         if (employeeToDelete !== null) {
-            setEmployees(prev => prev.filter(emp => emp.id !== employeeToDelete));
+            deleteEmployee(employeeToDelete);
             setIsDeleteModalOpen(false);
             setEmployeeToDelete(null);
         }
     };
+
 
 
     const filteredEmployees = employees.filter(employee =>
@@ -79,6 +68,16 @@ const EmployeesPage = () => {
 
     return (
         <div className="employees-page fade-in">
+            <div className="page-header">
+                <div className="header-icon-box">
+                    <Users size={28} />
+                </div>
+                <div className="header-text">
+                    <h1>Employee <span className="gradient-text">Management</span></h1>
+                    <p>View, manage and onboard employees within your organization</p>
+                </div>
+            </div>
+
             {/* Stats Summary */}
             <div className="employees-stats-grid">
                 <div className="employee-stat-card glass-card">
@@ -147,6 +146,7 @@ const EmployeesPage = () => {
                             <th>Actions</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         {filteredEmployees.map((employee) => (
                             <tr
@@ -213,7 +213,17 @@ const EmployeesPage = () => {
                                         <Button
                                             variant="ghost"
                                             size="sm"
+                                            className="action-btn email"
+                                            onClick={() => window.location.href = `mailto:${employee.companyEmail}`}
+                                            title="Send Email"
+                                            icon={<Mail size={18} />}
+                                            disabled={!employee.companyEmail}
+                                        />
+                                        <Button
+                                            variant="ghost"
+                                            size="sm"
                                             className="action-btn delete"
+
                                             onClick={() => handleDeleteClick(employee.id)}
                                             title="Delete Employee"
                                             icon={<Trash2 size={18} />}
